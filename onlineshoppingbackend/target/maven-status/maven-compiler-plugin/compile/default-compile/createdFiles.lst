@@ -1,0 +1,11 @@
+com\niit\cdb\configuration.class
+com\niit\bean\Supplier.class
+com\niit\daoimpl\SupplierDaoImpl.class
+com\niit\bean\Product.class
+com\niit\dao\CategoryDao.class
+com\niit\dao\SupplierDao.class
+com\niit\onlineshoppingbackend\App.class
+com\niit\daoimpl\CategoryDaoImpl.class
+com\niit\bean\Category.class
+com\niit\dao\ProductDao.class
+com\niit\daoimpl\ProductDaoImpl.class
