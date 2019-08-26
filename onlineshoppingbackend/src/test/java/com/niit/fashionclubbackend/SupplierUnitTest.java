@@ -19,7 +19,7 @@ public class SupplierUnitTest {
 	    
 	    supplierDao=(SupplierDao) context.getBean("supplierDao");
 	}
-//@Ignore
+@Ignore
 	@Test
 	public void addSupplierTest()
 	{

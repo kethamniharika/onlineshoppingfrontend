@@ -19,7 +19,7 @@ public class UserUnitTest {
 	    
 	    UserDao=(UserDao) context.getBean("UserDao");
 	}
-	//@Ignore
+	@Ignore
 	@Test
 	public void addUserTest()
 	{

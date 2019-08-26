@@ -1,12 +1,15 @@
 package com.niit.dao;
 
-import java.util.*;
+import java.util.List;
+
 import com.niit.bean.Product;
+
 public interface ProductDao {
-	   public boolean addProduct(Product Product);
-	   public boolean deleteProduct(Product Product);
-	   public boolean updateProduct(Product Product);
-	   public List<Product> listCategories();
-	   public Product getProduct(int ProductID);
+
+	   public boolean addProduct(Product product);
+	   public boolean deleteProduct(Product product);
+	   public boolean updateProduct(Product product);
+	   public List<Product> listProducts();
+	   public Product getProduct(int productID);
 
 }

@@ -28,6 +28,12 @@
       <li><a href="<c:url value="/register"/>">REGISTER</a></li>
       <li><a href="<c:url value="/contactus"/>">CONTACTUS</a></li>
       <li><a href="<c:url value="/aboutus"/>">ABOUTUS</a></li>
+            <li><a href="<c:url value="/supplier"/>">Manage Supplier</a></li>
+               <li><a href="<c:url value="/category"/>">Manage Category</a></li>
+                     
+
+                           <li><a href="<c:url value="/product"/>">Product</a></li>
+      
      </ul>
  
 </nav>

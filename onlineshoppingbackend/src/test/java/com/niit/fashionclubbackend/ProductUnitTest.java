@@ -19,13 +19,13 @@ public class ProductUnitTest {
 	    
 	    ProductDao=(ProductDao) context.getBean("ProductDao");
 	}
-//	@Ignore
+@Ignore
 	@Test
 	public void addProductTest()
 	{
 		Product Product=new Product();
-		Product.setProductName("Laptop");
-		Product.setProductDesc("Fast speed, good storage");
+		Product.setProName("Laptop");
+		Product.setProDesc("Fast speed, good storage");
 		
 		assertTrue("Problem in ading the Product",ProductDao.addProduct(Product));
 	}
@@ -42,7 +42,7 @@ public class ProductUnitTest {
 	public void updateProductTest()
 	{
 		Product Product=ProductDao.getProduct(2 );
-		Product.setProductDesc("Fast");
+	//	Product.setProductDesc("Fast");
 		
 		assertTrue("Problem in updating Product",ProductDao.updateProduct(Product));
 	}
