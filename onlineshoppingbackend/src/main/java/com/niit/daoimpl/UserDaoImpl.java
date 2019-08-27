@@ -1,77 +1,57 @@
 package com.niit.daoimpl;
 
-import java.util.*;
-import javax.transaction.*;
+import java.util.List;
 
-import org.hibernate.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.stereotype.*;
-import com.niit.bean.User;
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
 import com.niit.dao.UserDao;
-@Repository("UserDao") 
+import com.niit.bean.Category;
+import com.niit.bean.UserInfo;
+
+@Repository("userDao")
 @Transactional
-public class UserDaoImpl implements UserDao {
+public class UserDaoImpl implements UserDao 
+{
 	@Autowired
     SessionFactory sessionFactory;
     
-	public boolean addUser(User User) {
-		
-		 try
-	        {
-	        sessionFactory.getCurrentSession().save(User);
-	        return true;
-	        }
-	        catch(Exception e)
-	        {
-	        return false;
-		}
-	}
-
-	public boolean deleteUser(User User) {
-	
-		try
+	public boolean addUser(UserInfo user) 
+    {
+    	try
         {
-        sessionFactory.getCurrentSession().delete(User);
-        return true;
-        }
-        catch(Exception e)
-        {
-        return false;
-        }
-	}
-
-	public boolean updateUser(User User) {
-		
-		try
-        {
-        sessionFactory.getCurrentSession().update(User);
+        sessionFactory.getCurrentSession().save(user);
         return true;
         }
         catch(Exception e)
         {
         return false;
 	}
-	}
+}
 
-	public List<User> listUsers() {
-		
-		 Session session=sessionFactory.openSession();
-	        Query query=session.createQuery("from User");
-	        List<User> listUsers=query.list();
+	public boolean updateAddress(UserInfo user) {
+		try
+        {
+        sessionFactory.getCurrentSession().update(user);
+        return true;
+        }
+        catch(Exception e)
+        {
+        return false;
+        }
+}
+
+	public UserInfo getUser(String username) {
+		{
+		    Session session=sessionFactory.openSession();
+	        UserInfo user=session.get(UserInfo.class,username); 
 	        session.close();
-			return listUsers;
+			return user;
 	}
-
-	public User getUser(int UserID) {
-		
-		   Session session=sessionFactory.openSession();
-	        User User=session.get(User.class,UserID);        
-			return User ;
-	}
-
-	public List<User> listCategories() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+}
 
 }

@@ -2,13 +2,11 @@ package com.niit.dao;
 
 import java.util.List;
 
-import com.niit.bean.User;
+import com.niit.bean.UserInfo;
 
 public interface UserDao {
-	public boolean addUser(User User);
-	   public boolean deleteUser(User User);
-	   public boolean updateUser(User User);
-	   public List<User> listCategories();
-	   public User getUser(int UserID);
 
+	   public boolean addUser(UserInfo userInfo);
+	    public boolean updateAddress(UserInfo user);
+		public UserInfo getUser(String username);
 }

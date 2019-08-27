@@ -1,50 +1,51 @@
 package com.niit.fashionclubbackend;
-import static org.junit.Assert.*;
-import org.junit.*;
-import org.springframework.beans.factory.annotation.*;
-import org.springframework.context.annotation.*;
-import com.niit.bean.User;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.niit.dao.UserDao;
+import com.niit.bean.UserInfo;
+
 public class UserUnitTest {
-@Autowired
-	static UserDao UserDao;
+
+	@Autowired
+	static UserDao userDao;
 	
 	@BeforeClass
-	public static void executeFirst()
+	public static void init()
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 	    
 	    context.scan("com.niit");
 	    context.refresh();
 	    
-	    UserDao=(UserDao) context.getBean("UserDao");
+	    userDao=(UserDao) context.getBean("userDao");
 	}
+	
 	@Ignore
 	@Test
-	public void addUserTest()
+	public void addUserInfoTest()
 	{
-		User User=new User();
-		User.setUsername("niha");
-		User.setPassword("password");
-		User.setRole("ROLE_USER");
-		User.setEnabled(true);
-		User.setCustomerName("niha1");
-		assertTrue("Problem in adding the User",UserDao.addUser(User));
+		UserInfo user=new UserInfo();
+
+		user.setUsername("swathi");
+		user.setPassword("swathi@123");
+		user.setRole("ROLE_ADMIN");
+		user.setEnabled(true);
+		user.setCustomerName("prani");
+		user.setCustomerAddr("Hyderabad");
+
+		assertTrue("Problem in adding the userInfo",userDao.addUser(user));
 	}
-	@Ignore
-	@Test
-	public void deleteUserTest()
-	{
-		User User=UserDao.getUser(1);
-		
-		assertTrue("Problem in deleting User",UserDao.deleteUser(User));
-	}
-	@Ignore
-	@Test
-	public void updateUserTest()
-	{
-		User User=UserDao.getUser(2 );
-		User.setCustomerName("prani");
-		assertTrue("Problem in updating User",UserDao.updateUser(User));
-	}
+
+
+	
+	
+
+
 }

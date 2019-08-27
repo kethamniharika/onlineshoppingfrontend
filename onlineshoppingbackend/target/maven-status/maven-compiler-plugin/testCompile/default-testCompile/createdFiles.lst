@@ -1,4 +1,7 @@
-com\niit\fashionclubbackend\ProductUnitTest.class
-com\niit\fashionclubbackend\SupplierUnitTest.class
 com\niit\fashionclubbackend\CategoryUnitTest.class
 com\niit\onlineshoppingbackend\AppTest.class
+com\niit\fashionclubbackend\CartTestcases.class
+com\niit\fashionclubbackend\ProductUnitTest.class
+com\niit\fashionclubbackend\UserUnitTest.class
+com\niit\fashionclubbackend\SupplierUnitTest.class
+com\niit\fashionclubbackend\OrderDetailsTestcase.class

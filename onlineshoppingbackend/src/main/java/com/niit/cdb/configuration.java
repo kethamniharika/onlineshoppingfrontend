@@ -40,7 +40,7 @@ public class configuration {
        factory.addAnnotatedClass(Category.class);
        factory.addAnnotatedClass(Supplier.class);
         factory.addAnnotatedClass(Product.class);
-        factory.addAnnotatedClass(User.class);
+        factory.addAnnotatedClass(UserInfo.class);
         factory.addAnnotatedClass(CartItem.class);
         factory.addAnnotatedClass(OrderDetail.class);
 

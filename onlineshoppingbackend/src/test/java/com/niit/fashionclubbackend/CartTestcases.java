@@ -27,17 +27,17 @@ static CartDao cartDao;
 	    cartDao=(CartDao)context.getBean("cartDao");
 	}
 
-	//@Ignore
+	@Ignore
 	@Test
 	public void addCartItemtest() 
 	{
 		CartItem cartItem=new CartItem();
-		cartItem.setProId(104);
+		cartItem.setProId(107);
 		cartItem.setProName("iphone");
 		cartItem.setQuantity(2);
 		cartItem.setProprice(2000);
 		cartItem.setPaymentStatus("NP");
-		cartItem.setUsername("niha");
+		cartItem.setUsername("rahul");
 		
 		assertTrue("problem in adding Item into Cart",cartDao.addCartItem(cartItem));
 	}

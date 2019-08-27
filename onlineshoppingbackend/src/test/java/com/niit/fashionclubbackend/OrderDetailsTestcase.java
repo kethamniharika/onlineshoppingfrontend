@@ -24,7 +24,7 @@ public class OrderDetailsTestcase {
 		    orderDao=(OrderDao) context.getBean("orderDao");
 	    }
 	   
-	    //@Ignore
+	    @Ignore
 		@Test
 		public void saveOrdertest() 
 		{

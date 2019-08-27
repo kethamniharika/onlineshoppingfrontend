@@ -1,13 +1,12 @@
 package com.niit.bean;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 
 @Entity
 @Table
-public class User {
+public class UserInfo {
 
-    @Id
+	@Id
     String username;
     String password;
     String role;
@@ -50,5 +49,5 @@ public class User {
 	public void setCustomerAddr(String customerAddr) {
 		this.customerAddr = customerAddr;
 	}
-
+	
 }
